@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-homepage",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-24T15:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.codeandtheory.com/",
+    "originPage": "Homepage / landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large",
+    "structure": "video background + navigation links + news ticker"
+  },
+  "contentPattern": {
+    "structure": "background video + large nav links + promotional cards",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage landing sections",
+      "full-screen video hero areas",
+      "navigation-style hero with animated backgrounds"
+    ],
+    "notSuitableFor": [
+      "simple text hero sections",
+      "product pages",
+      "interior pages without video"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-24T15:45:00.000Z"
+  }
+}

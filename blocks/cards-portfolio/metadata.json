@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-portfolio",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-24T15:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.codeandtheory.com/",
+    "originPage": "Homepage - project portfolio grid",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "portfolio",
+    "imagePattern": "large",
+    "structure": "image cards with brand|title overlay text"
+  },
+  "contentPattern": {
+    "structure": "image + brand name + project title per card",
+    "buttonCount": 0,
+    "imageCount": 50
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "portfolio/work showcase grids",
+      "project listing pages",
+      "case study index pages",
+      "image-heavy card grids on dark backgrounds"
+    ],
+    "notSuitableFor": [
+      "text-heavy card lists",
+      "product feature cards",
+      "light background layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-24T15:45:00.000Z"
+  }
+}

@@ -1,0 +1,217 @@
+/* Block: carousel -- Testimonial carousel
+   Based on extracted computed styles from source.
+   The carousel lives in a .section.dark which provides the outer navy background.
+   The block itself just needs to handle the card and slide layout. */
+.carousel {
+  padding: 0;
+}
+
+/* Card container - dark rounded card */
+.carousel .carousel-card {
+  background-color: var(--text-color);
+  color: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  padding: 96px 64px;
+}
+
+/* Quote icon */
+.carousel .carousel-quote-icon {
+  margin-bottom: 24px;
+  color: rgb(255 255 255 / 10%);
+}
+
+.carousel .carousel-quote-icon svg {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+
+/* Viewport - clips slides */
+.carousel .carousel-viewport {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track - horizontal flex of slides */
+.carousel .carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Individual slide */
+.carousel .carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+/* Slide inner content */
+.carousel .carousel-slide-inner {
+  max-width: 896px;
+}
+
+/* Blockquote */
+.carousel .carousel-quote {
+  font-size: 31.2px;
+  font-weight: 300;
+  font-family: var(--body-font-family);
+  line-height: 39px;
+  color: #fff;
+  margin: 0 0 48px;
+  padding: 0;
+  border: none;
+}
+
+.carousel .carousel-quote p {
+  font-size: 31.2px;
+  font-weight: 300;
+  line-height: 39px;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+/* Override .section.dark p color for carousel content */
+main .section.dark .carousel p {
+  color: #fff;
+}
+
+/* Author section */
+.carousel .carousel-author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Avatar */
+.carousel .carousel-avatar {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgb(255 255 255 / 20%);
+}
+
+.carousel .carousel-avatar picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .carousel-avatar img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Author name */
+.carousel .carousel-author-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 23.4px;
+  margin: 0 0 4px;
+}
+
+/* Author meta */
+.carousel .carousel-author-meta {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(163 163 163);
+  line-height: 22.4px;
+  margin: 0;
+}
+
+main .section.dark .carousel .carousel-author-meta {
+  color: rgb(163 163 163);
+}
+
+/* Controls */
+.carousel .carousel-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+/* Arrow buttons */
+.carousel .carousel-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s ease;
+}
+
+.carousel .carousel-arrow:hover {
+  border-color: rgb(255 255 255 / 50%);
+}
+
+.carousel .carousel-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Dots */
+.carousel .carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel .carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: rgb(255 255 255 / 30%);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel .carousel-dot-active {
+  width: 32px;
+  background-color: #fff;
+}
+
+/* Mobile adjustments */
+@media (width < 600px) {
+  .carousel .carousel-card {
+    padding: 48px 24px;
+    border-radius: 16px;
+  }
+
+  .carousel .carousel-quote {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 32px;
+  }
+
+  .carousel .carousel-quote p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .carousel .carousel-controls {
+    margin-top: 32px;
+  }
+
+  .carousel .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+}

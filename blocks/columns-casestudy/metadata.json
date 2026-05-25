@@ -1,0 +1,41 @@
+{
+  "variantName": "columns-casestudy",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-24T15:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.codeandtheory.com/",
+    "originPage": "Homepage - case study blowout sections",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "casestudy",
+    "imagePattern": "large",
+    "structure": "large image + eyebrow + heading + description + CTA + bullets"
+  },
+  "contentPattern": {
+    "structure": "image column (60%) + text column (eyebrow + heading + description + link + bullet list)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "case study feature sections",
+      "project blowout/spotlight layouts",
+      "image-heavy two-column content on dark backgrounds",
+      "category showcase sections with text + cards"
+    ],
+    "notSuitableFor": [
+      "simple text columns",
+      "multi-column comparison layouts",
+      "light background equal-width columns"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-24T15:45:00.000Z"
+  }
+}

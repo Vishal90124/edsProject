@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "projectType": "doc"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.codeandtheory.com/"
+      ],
+      "description": "Main Code and Theory homepage with hero, work showcase, and company introduction",
+      "blocks": [
+        {
+          "name": "hero-homepage",
+          "instances": ["section.src-sites-candt-components-HomeNavigation-homeNavigation"]
+        },
+        {
+          "name": "cards-portfolio",
+          "instances": [".src-sites-candt-components-HomepagePromotion-homepagePromotion", ".src-sites-candt-components-Cards-card--project"]
+        },
+        {
+          "name": "columns-casestudy",
+          "instances": ["section.src-sites-candt-components-SingleBlowout-singleBlowout", "section.src-sites-candt-components-SizzleVideo-sizzleVideo"]
+        },
+        {
+          "name": "carousel-showcase",
+          "instances": ["section.src-sites-candt-components-AwardsModule-awardsModule", "section.src-sites-candt-components-CarouselHero-CarouselHeroDesktop-carousel-hero-desktop__container"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Home Navigation Hero",
+          "selector": "section.src-sites-candt-components-HomeNavigation-homeNavigation",
+          "style": "dark",
+          "blocks": ["hero-homepage", "cards-portfolio"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Featured Work Showcase",
+          "selector": "section.src-sites-candt-components-SizzleVideo-sizzleVideo",
+          "style": "dark",
+          "blocks": ["columns-casestudy", "carousel-showcase"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Things We Make",
+          "selector": "#page-thingsWeMake",
+          "style": "dark",
+          "blocks": ["carousel-showcase", "columns-casestudy"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "All Work Grid",
+          "selector": ".src-sites-candt-components-Cards-card--project",
+          "style": "dark",
+          "blocks": ["cards-portfolio"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Page Transition",
+          "selector": "#transporter-banner--home",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [".transporter-banner__title"]
+        }
+      ]
+    },
+    {
+      "name": "vertical-landing",
+      "urls": [
+        "https://health.codeandtheory.com/"
+      ],
+      "description": "Health vertical landing page showcasing industry-specific capabilities and case studies",
+      "blocks": []
+    },
+    {
+      "name": "careers-page",
+      "urls": [
+        "https://www.codeandtheory.com/careers"
+      ],
+      "description": "Careers page with job listings, culture, and company benefits",
+      "blocks": []
+    },
+    {
+      "name": "contact-page",
+      "urls": [
+        "https://www.codeandtheory.com/contact"
+      ],
+      "description": "Contact page with office locations and inquiry form",
+      "blocks": []
+    },
+    {
+      "name": "about-page",
+      "urls": [
+        "https://www.codeandtheory.com/about-us"
+      ],
+      "description": "About page with company story, leadership, and values",
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+:root {
+  --heading-font-family: koor, "Times New Roman", serif;
+  --body-font-family: akademie, sans-serif;
+  --background-color: #000;
+  --text-color: #fff;
+  --link-color: #fff;
+  --link-hover-color: #ccc;
+  --light-color: #1a1a1a;
+  --dark-color: #000;
+  --section-padding: 0px;
+  --content-max-width: 1312px;
+  --nav-height: 70px;
+  --heading-size-xxl: 85px;
+  --heading-size-xl: 55px;
+  --heading-size-l: 24px;
+  --heading-size-m: 24px;
+  --heading-size-s: 16px;
+  --heading-size-xs: 14px;
+}
