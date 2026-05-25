@@ -1,0 +1,82 @@
+/* Block: tabs -- Jump navigation sticky bar */
+
+/* Wrapper: full-width sticky bar */
+.tabs-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: var(--background-color);
+  border-bottom: 1px solid rgb(229 229 229);
+}
+
+.tabs {
+  padding: 24px 0;
+}
+
+.tabs nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tabs .tabs-label {
+  color: rgb(115 115 115);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--body-font-family);
+  white-space: nowrap;
+}
+
+.tabs .tabs-link {
+  color: rgb(82 82 82);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--body-font-family);
+  padding: 8px 16px;
+  text-decoration: none;
+  line-height: 20px;
+  display: block;
+  border-radius: 0;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.tabs .tabs-link:hover {
+  color: var(--text-color);
+}
+
+/* Reset EDS button styling on these links */
+main .tabs a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: rgb(82 82 82);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin: 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+main .tabs a.button:any-link:hover {
+  color: var(--text-color);
+  background: none;
+}
+
+/* Mobile: stack links vertically */
+@media (width < 900px) {
+  .tabs nav {
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 16px;
+  }
+
+  .tabs .tabs-link {
+    padding: 6px 12px;
+  }
+}

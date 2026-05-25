@@ -1,0 +1,134 @@
+/* Block: cards-portfolio
+   Portfolio cards with image + overlaid text heading.
+   Source: codeandtheory.com CardGrid / HomepagePromotion component.
+   Cards display project images with "Brand | Title" headings overlaid at bottom.
+*/
+
+/* --- Block root --- */
+.cards-portfolio {
+  padding: 0;
+}
+
+/* --- Remove default list styling --- */
+.cards-portfolio > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* --- Card item --- */
+.cards-portfolio > ul > li {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 0;
+}
+
+/* --- Image container --- */
+.cards-portfolio .cards-portfolio-card-image {
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.cards-portfolio > ul > li img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Hover: scale image */
+.cards-portfolio > ul > li:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Text body (overlaid at bottom of card) --- */
+.cards-portfolio .cards-portfolio-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  z-index: 1;
+  background: linear-gradient(to top, rgb(0 0 0 / 60%) 0%, transparent 100%);
+}
+
+.cards-portfolio .cards-portfolio-card-body h2 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--heading-font-family);
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  color: rgb(255 255 255);
+  margin: 0;
+}
+
+/* --- Section-level layout for the cards grid --- */
+.section.cards-portfolio-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0 24px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.section.cards-portfolio-container > .default-content-wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Full-width elements that span the grid */
+.section.cards-portfolio-container > .default-content-wrapper,
+.section.cards-portfolio-container > .columns-casestudy-wrapper {
+  grid-column: 1 / -1;
+}
+
+/* Card wrappers in a flowing grid */
+.section.cards-portfolio-container > .cards-portfolio-wrapper {
+  padding: 0;
+}
+
+/* --- Responsive: Mobile first (single column) --- */
+
+/* --- Tablet (2 columns) --- */
+@media (width >= 600px) {
+  .section.cards-portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 0 32px;
+  }
+
+  .cards-portfolio .cards-portfolio-card-body h2 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+/* --- Desktop (3 columns) --- */
+@media (width >= 900px) {
+  .section.cards-portfolio-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 0 32px;
+  }
+}
+
+/* --- Large desktop (4 columns matching source) --- */
+@media (width >= 1200px) {
+  .section.cards-portfolio-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 0 64px;
+  }
+
+  .cards-portfolio .cards-portfolio-card-body h2 {
+    font-size: 23px;
+    line-height: 28.06px;
+  }
+}

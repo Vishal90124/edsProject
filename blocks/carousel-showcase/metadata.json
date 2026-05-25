@@ -1,0 +1,41 @@
+{
+  "variantName": "carousel-showcase",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-24T15:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.codeandtheory.com/",
+    "originPage": "Homepage - featured project carousel and awards",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "showcase",
+    "imagePattern": "large",
+    "structure": "full-bleed image slides with text overlay"
+  },
+  "contentPattern": {
+    "structure": "full-screen image + eyebrow brand + multi-line description per slide",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-screen project/portfolio carousels",
+      "hero-style sliding showcases",
+      "awards/recognition horizontal scroll",
+      "featured work presentations on dark backgrounds"
+    ],
+    "notSuitableFor": [
+      "small inline carousels",
+      "product image galleries",
+      "light background slideshows"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-24T15:45:00.000Z"
+  }
+}
