@@ -116,13 +116,13 @@
   transition: background-color 0.2s ease;
 }
 
-.web3-form .web3-form-submit button:hover:not(:disabled) {
-  background-color: #333;
-}
-
 .web3-form .web3-form-submit button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+.web3-form .web3-form-submit button:hover:not(:disabled) {
+  background-color: #333;
 }
 
 .web3-form .web3-form-status {
