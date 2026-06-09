@@ -319,7 +319,7 @@ function enableValidation(form) {
 }
 
 function isDocumentBasedForm(formDef) {
-  return formDef?.[':type'] === 'sheet' && formDef?.data;
+  return (formDef?.[':type'] === 'sheet' || formDef?.[':type'] === 'multi-sheet') && formDef?.data;
 }
 
 async function createFormForAuthoring(formDef) {
@@ -640,7 +640,7 @@ export default async function decorate(block) {
     const spreadsheetUrl = submitProps?.spreadsheet?.spreadsheetUrl
       || formDef?.properties?.spreadsheetUrl;
 
-    if (actionType === 'spreadsheet' && spreadsheetUrl) {
+   if (actionType === 'spreadsheet' && spreadsheetUrl) {
       // Check if we're in an iframe and use parent window path if available
       const iframePath = window.frameElement ? window.parent.location.pathname
         : window.location.pathname;
@@ -648,6 +648,7 @@ export default async function decorate(block) {
     } else {
       formDef.action = getSubmitBaseUrl() + (formDef.action || '');
     }
+    
     if (isDocumentBasedForm(formDef)) {
       const transform = new DocBasedFormToAF();
       formDef = transform.transform(formDef, { block });

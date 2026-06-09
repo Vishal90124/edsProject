@@ -1,0 +1,144 @@
+/* Block: web3-form -- Web3Forms-powered contact form */
+
+.web3-form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.web3-form .web3-form-header {
+  margin-bottom: 32px;
+}
+
+.web3-form .web3-form-header h2,
+.web3-form .web3-form-header h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  font-family: var(--heading-font-family);
+  color: var(--text-color);
+  margin: 0 0 12px;
+}
+
+.web3-form .web3-form-header p {
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  line-height: 24px;
+  color: #525252;
+  margin: 0;
+}
+
+.web3-form .web3-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.web3-form .web3-form-honeypot {
+  display: none;
+}
+
+.web3-form .web3-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.web3-form .web3-form-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(64 64 64);
+  margin-bottom: 6px;
+}
+
+.web3-form .web3-form-field input,
+.web3-form .web3-form-field textarea {
+  border: 1px solid rgb(229 229 229);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  background-color: transparent;
+  color: var(--text-color);
+  width: 100%;
+  margin: 0;
+}
+
+.web3-form .web3-form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.web3-form .web3-form-field input:hover,
+.web3-form .web3-form-field textarea:hover {
+  border-color: rgb(163 163 163);
+}
+
+.web3-form .web3-form-field input:focus,
+.web3-form .web3-form-field textarea:focus {
+  border-color: var(--text-color);
+  outline: none;
+}
+
+.web3-form .web3-form-consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.web3-form .web3-form-consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin: 4px 0 0;
+  flex: none;
+}
+
+.web3-form .web3-form-consent label {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.web3-form .web3-form-submit {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.web3-form .web3-form-submit button {
+  background-color: var(--text-color);
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.web3-form .web3-form-submit button:hover:not(:disabled) {
+  background-color: #333;
+}
+
+.web3-form .web3-form-submit button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.web3-form .web3-form-status {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 8px;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+.web3-form .web3-form-status-success {
+  background-color: rgb(220 252 231);
+  color: rgb(22 101 52);
+}
+
+.web3-form .web3-form-status-error {
+  background-color: rgb(254 226 226);
+  color: rgb(153 27 27);
+}
