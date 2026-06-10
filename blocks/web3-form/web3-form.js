@@ -1,5 +1,5 @@
 /**
- * Web3 Form block - contact forms powered by Web3Forms API.
+ * Web3 Form block - contact forms powered by the splitforms API.
  *
  * Content structure:
  *   Row 1 (optional): Header cell (h2 + description paragraph)
@@ -7,7 +7,7 @@
  *   Field rows: Label | Type     (text, email, tel, textarea, checkbox, submit)
  */
 
-const API_URL = 'https://api.web3forms.com/submit';
+const API_URL = 'https://splitforms.com/api/submit';
 
 const CONFIG_LABELS = new Set([
   'access key',
@@ -157,6 +157,7 @@ async function handleSubmit(event, form, config) {
     const response = await fetch(API_URL, {
       method: 'POST',
       body: formData,
+      headers: { Accept: 'application/json' },
     });
     const data = await response.json();
 
