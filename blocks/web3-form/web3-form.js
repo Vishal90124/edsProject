@@ -1,20 +1,34 @@
 /**
- * Web3 Form block - contact forms powered by the splitforms API.
+ * Web3 Form block - contact forms powered by the Web3Forms API.
  *
  * Content structure:
  *   Row 1 (optional): Header cell (h2 + description paragraph)
- *   Config rows: Label | Value  (Access Key, Subject, Success Message, From Name)
+ *   Config rows: Label | Value  (Access Key, Subject, Success Message, From Name, Captcha)
  *   Field rows: Label | Type     (text, email, tel, textarea, checkbox, submit)
+ *
+ * Set Captcha to "true" to enable Web3Forms' zero-config hCaptcha. Enable hCaptcha
+ * in the Web3Forms dashboard so the token is validated server-side.
  */
 
-const API_URL = 'https://splitforms.com/api/submit';
+const API_URL = 'https://api.web3forms.com/submit';
+const CAPTCHA_SCRIPT = 'https://web3forms.com/client/script.js';
 
 const CONFIG_LABELS = new Set([
   'access key',
   'subject',
   'success message',
   'from name',
+  'captcha',
 ]);
+
+function loadCaptchaScript() {
+  if (document.querySelector(`script[src="${CAPTCHA_SCRIPT}"]`)) return;
+  const script = document.createElement('script');
+  script.src = CAPTCHA_SCRIPT;
+  script.async = true;
+  script.defer = true;
+  document.head.append(script);
+}
 
 function fieldName(label) {
   return label.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
@@ -32,6 +46,7 @@ function readConfig(rows) {
     subject: '',
     successMessage: 'Success! Your message has been sent.',
     fromName: '',
+    captcha: false,
   };
   const fieldRows = [];
   let headerRow = null;
@@ -53,6 +68,7 @@ function readConfig(rows) {
     else if (key === 'subject') config.subject = value;
     else if (key === 'success message') config.successMessage = value;
     else if (key === 'from name') config.fromName = value;
+    else if (key === 'captcha') config.captcha = value.toLowerCase() === 'true';
     else if (!CONFIG_LABELS.has(key)) {
       fieldRows.push({ label, type: value.toLowerCase() });
     }
@@ -130,6 +146,18 @@ function createSubmitField({ label }) {
   return wrapper;
 }
 
+function createCaptcha() {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'web3-form-captcha';
+
+  const widget = document.createElement('div');
+  widget.className = 'h-captcha';
+  widget.dataset.captcha = 'true';
+
+  wrapper.append(widget);
+  return wrapper;
+}
+
 function createStatus(message, type) {
   const status = document.createElement('p');
   status.className = `web3-form-status web3-form-status-${type}`;
@@ -144,6 +172,14 @@ async function handleSubmit(event, form, config) {
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalText = submitBtn.textContent;
   form.querySelector('.web3-form-status')?.remove();
+
+  if (config.captcha) {
+    const token = form.querySelector('[name="h-captcha-response"]')?.value;
+    if (!token) {
+      form.prepend(createStatus('Please complete the CAPTCHA.', 'error'));
+      return;
+    }
+  }
 
   submitBtn.textContent = 'Sending...';
   submitBtn.disabled = true;
@@ -203,6 +239,9 @@ export default function decorate(block) {
 
   fieldRows.forEach((field) => {
     if (field.type === 'submit') {
+      if (config.captcha) {
+        form.append(createCaptcha());
+      }
       form.append(createSubmitField(field));
     } else if (field.type === 'checkbox') {
       form.append(createCheckboxField(field));
@@ -210,6 +249,10 @@ export default function decorate(block) {
       form.append(createTextField(field));
     }
   });
+
+  if (config.captcha) {
+    loadCaptchaScript();
+  }
 
   form.addEventListener('submit', (event) => handleSubmit(event, form, config));
   block.append(form);

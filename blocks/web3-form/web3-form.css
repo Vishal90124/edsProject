@@ -98,6 +98,10 @@
   font-weight: 400;
 }
 
+.web3-form .web3-form-captcha {
+  margin-top: 8px;
+}
+
 .web3-form .web3-form-submit {
   display: flex;
   justify-content: flex-start;
